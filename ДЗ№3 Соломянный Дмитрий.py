@@ -10,7 +10,7 @@ new_value = 1 if value <100 else 0
 print(new_value)
 
 ##########################################################
-#3
+#3/
 value = 90
 new_value = True if value <100 else False
 print(new_value)
