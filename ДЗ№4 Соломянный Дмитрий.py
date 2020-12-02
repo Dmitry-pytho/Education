@@ -35,7 +35,7 @@
 #     new_float = float(value)
 #     new_value = 1/new_float
 #     print(new_value)
-# except:
+# except ZeroDivisionError:
 #     print("Вы ввели ноль или целое число или букву")
 
 ################################################
@@ -62,11 +62,12 @@
 # 		print(symb_1 + symb_2)
 
 new_int = "0123456789"
-# new_int = int(my_int)
+new_list = []
 for symb_1 in new_int:
     for symb_2 in new_int:
-        new_list = symb_1+symb_2
-        print(new_list[])
+        chislo = symb_1+symb_2
+        new_list.append(int(chislo))
+print(new_list)
 
 
 
