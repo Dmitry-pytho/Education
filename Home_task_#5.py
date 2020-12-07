@@ -1,19 +1,19 @@
-# Задание №1
+#Задание №1
 my_int = 123450505608902000222020
 new_type = str(my_int)
 search_number = "0"
 zero = new_type.count(search_number)
 print("Количество нулей в числе равно = ", zero)
-# ########################################
-#
-# Задание №2
+########################################
+
+#Задание №2
 my_int = 5076070000000
 new_number = str(my_int)
 result = len(new_number) - len(new_number.strip("0"))
 print("Количесвто нулей в конце числа равно = ", result)
-# ########################################
-#
-# Задание №3a
+########################################
+
+#Задание №3a
 
 my_list1 = [1, 2, 3, 4, 5]
 my_list2 = [10, 15, 20, 25]
@@ -22,7 +22,7 @@ even_index = my_list2[1::2]
 new_list = odd_index + even_index
 print(new_list)
 
-# Задание №3б
+#Задание №3б
 my_list1 = [1, 2, 3, 4, 5]
 my_list2 = [10, 15, 20, 25]
 new_list = []
@@ -33,7 +33,7 @@ for index in range(len(my_list2)):
     if not index % 2 == 0:
         new_list.append(my_list2[index])
 print(new_list)
-# # ########################################
+#########################################
 
 # Задание №4
 my_list = [1, 2, 3, 4]
@@ -41,9 +41,9 @@ print(my_list)
 new_list = [2, 3, 4, 1]
 my_list = new_list
 print(new_list)
-####################################
+# ####################################
 
-# Задание №5
+#Задание №5
 my_list = [1, 2, 3, 4]
 print(my_list)
 my_list.pop(0) and my_list.pop(2)
@@ -52,7 +52,7 @@ my_list.insert(3,1)
 print(my_list)
 
 ###################################
-# Задание№6
+#Задание№6
 my_str = "43 больше чем 34 но меньше чем 56"
 parts_my_str = my_str.split()
 print(parts_my_str)
@@ -64,7 +64,7 @@ print(suma_chisel)
 
 #####################################
 
-# Задание №7a
+#Задание №7a
 my_str = "abcd"
 my_list = []
 for number in range(0, len(my_str), 2):
@@ -73,8 +73,8 @@ for number in range(0, len(my_str), 2):
         para = para + "_"
     my_list.append(para)
 print(my_list)
-#
-# # Задание №7b
+
+#Задание №7b
 my_str = "abcde"
 my_list = []
 for number in range(0, len(my_str), 2):
@@ -85,7 +85,7 @@ for number in range(0, len(my_str), 2):
 print(my_list)
 
 ###########################################
-# Задание №8
+#Задание №8
 my_str = "My_long str"
 l_limit = "o"
 r_limit = "t"
@@ -95,7 +95,7 @@ sub_str = my_str[left_index+1:right_index]
 print(sub_str)
 
 ##########################################]
-#Задание №9
+# Задание №9
 my_str = "My long string"
 l_limit = "o"
 r_limit = "g"
@@ -104,4 +104,10 @@ right_index = my_str.rindex(r_limit)
 sub_str = my_str[left_index+1:right_index]
 print(sub_str)
 
-
+# Задание №10
+my_list = [2, 4, 1, 5, 3, 9, 0, 7]
+new_list = []
+for number in range (1, len(my_list)-1):
+    if my_list[number] > my_list[number-1]+my_list[number+1]:
+        new_list.append(my_list[number])
+print(len(new_list))
