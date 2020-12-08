@@ -15,24 +15,17 @@ print("Количесвто нулей в конце числа равно = ", 
 
 #Задание №3a
 
-my_list1 = [1, 2, 3, 4, 5]
-my_list2 = [10, 15, 20, 25]
-odd_index = my_list1[::2]
-even_index = my_list2[1::2]
-new_list = odd_index + even_index
+my_list1 = ["a", 2, "z", 4, 5]
+my_list2 = [10, 0, 20, 25, "b"]
+new_list = []
+for number in range(0, len(my_list1), 2):
+    new_list.append(my_list1[number])
+for number in range(1, len(my_list2), 2):
+    new_list.append(my_list2[number])
 print(new_list)
 
 #Задание №3б
-my_list1 = [1, 2, 3, 4, 5]
-my_list2 = [10, 15, 20, 25]
-new_list = []
-for index in range(len(my_list1)):
-    if index % 2:
-        new_list.append(my_list1[index])
-for index in range(len(my_list2)):
-    if not index % 2 == 0:
-        new_list.append(my_list2[index])
-print(new_list)
+
 #########################################
 
 # Задание №4
@@ -110,4 +103,5 @@ new_list = []
 for number in range (1, len(my_list)-1):
     if my_list[number] > my_list[number-1]+my_list[number+1]:
         new_list.append(my_list[number])
+        print(number)
 print(len(new_list))
