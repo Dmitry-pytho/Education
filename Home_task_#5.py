@@ -38,19 +38,17 @@ print(new_list)
 #########################################
 
 # Задание №4
-my_list = [1, 2, 3, 4]
-print(my_list)
-new_list = [2, 3, 4, 1]
-my_list = new_list
+my_list = [1,2,3,4]
+zero_index = my_list.pop(0)
+new_list = my_list
+new_list.append(zero_index)
 print(new_list)
+
 # ####################################
 
 #Задание №5
-my_list = [1, 2, 3, 4]
-print(my_list)
-my_list.pop(0) and my_list.pop(2)
-my_list.insert(0,4)
-my_list.insert(3,1)
+my_list   = [1,2,3,4]
+my_list.append(my_list.pop(0))
 print(my_list)
 
 ###################################
