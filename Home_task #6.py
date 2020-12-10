@@ -1,0 +1,45 @@
+#Задание №1
+# my_list_1 = ["Hello", "Good morning", "Yes", "No", "Good bye"]
+# new_list = []
+# for element in enumerate(my_list_1):
+#     if element[0] %2==0:
+#         new_list.append(element[1])
+#     if element[0] %2 != 0:
+#         new_list.append(element[1][::-1])
+# print(new_list)
+#####################################################
+
+#Задание №2
+# my_list = ['America', 'Africa', 'India', 'Germany', 'apple', 'Ukraine', 'Europe']
+# new_list = []
+# for word in my_list:
+#     if word[0] =="a" or word[0] =="A":
+#         new_list.append(word)
+# print(new_list)
+#############################################################
+
+#Задание №3
+# my_list = ['America', 'Africa', 'India', 'Germany', 'apple', 'Ukraine', 'Europe', "USA"]
+# new_list = []
+# for word in my_list:
+#     if "a" in word or "A" in word:
+#         new_list.append(word)
+#         print(word)
+##################################################################
+
+#Задание №4
+# my_list = ['America', 1976, 'Africa', 1950,'India', 1500,'Germany', 'apple', 'Ukraine',1991, 'Europe', "USA"]
+# new_list = []
+# for word in my_list:
+#     if type(word) ==str:
+#         new_list.append(word)
+# print(new_list)
+#########################################################
+
+#Задание №5
+my_str = "Helloworld"
+new_list = []
+for symbol in my_str:
+    if my_str.count(symbol) ==1:
+        new_list.append(symbol)
+print(new_list)

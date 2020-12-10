@@ -1,5 +1,6 @@
-my_list = [1,2,3,4]
-zero_index = my_list.pop(0)
-new_list = my_list
-new_list.append(zero_index)
+my_str = "Helloworld"
+new_list = []
+for symbol in my_str:
+    if my_str.count(symbol) ==1:
+        new_list.append(symbol)
 print(new_list)
