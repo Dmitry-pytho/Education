@@ -1,6 +1,18 @@
-my_str = "Helloworld"
-new_list = []
-for symbol in my_str:
-    if my_str.count(symbol) ==1:
-        new_list.append(symbol)
-print(new_list)
+
+personal_card = {
+                 "Фамилия": "Соломянный",
+                 "Имя": "Дмитрий",
+                 "Возраст":"35",
+                 "Проживание":{"Страна":"Украина",
+                                "Город":"Днепропетровск",
+                                "Улица":"ж/м Тополь"},
+                 "Работа":{"Наличие":"Да",
+                            "Должность":"Серивсный менеджер"},
+                "рост": 185
+
+                 }
+print(personal_card)
+
+personal_card['Возраст'] = 5
+personal_card['рост'] = 183
+print(personal_card)
