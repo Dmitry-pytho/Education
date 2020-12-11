@@ -37,9 +37,28 @@
 #########################################################
 
 #Задание №5
-my_str = "Helloworld"
-new_list = []
-for symbol in my_str:
-    if my_str.count(symbol) ==1:
-        new_list.append(symbol)
-print(new_list)
+# my_str = "Helloworld"
+# new_list = []
+# for symbol in my_str:
+#     if my_str.count(symbol) ==1:
+#         new_list.append(symbol)
+# print(new_list)
+#####################################################
+
+#Задание №6
+# my_str_1 = "Hello world!"
+# my_str_2 = "Good morning my friends"
+# my_set1 = set(my_str_1)
+# my_set2 = set(my_str_2)
+# inter_set = my_set1.intersection(my_set2)
+# new_list = list(inter_set)
+# print(new_list)
+
+#Задание №7
+# my_str_1 = "Hello, world!"
+# my_str_2 = "Good morning my friends"
+# my_set1 = set(my_str_1)
+# my_set2 = set(my_str_2)
+# inter_set = my_set1.union(my_set2)
+# new_list = list(inter_set)
+# print(new_list)
