@@ -22,8 +22,7 @@
 ######################################
 
 #Задание №3
-my_str = "I'm the string"
-def print_my_str():
-    str = "***" + my_str + "***"
-    return str
-print(print_my_str())
+def my_print(body_message):
+    message = "***" + body_message + "***"
+    print(message)
+my_print("I'm the string")
