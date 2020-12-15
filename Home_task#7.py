@@ -21,8 +21,31 @@
 # print(triangle)
 ######################################
 
-#Задание №3
-def my_print(body_message):
-    message = "***" + body_message + "***"
-    print(message)
-my_print("I'm the string")
+# Задание №3
+# def my_print(body_message):
+#     message = "***" + body_message + "***"
+#     print(message)
+# my_print("I'm the string")
+#######################################
+# Задание №4a
+from collections import defaultdict
+
+persons = [{"Name": "John", "Age": 15},
+           {"Name": "Mark", "Age": 18},
+           {"Name": "Michael", "Age": 27},
+           {"Name": "Jack", "Age": 35},
+           {"Name": "Donald", "Age": 38}]
+age_by_names = defaultdict(list)
+len_name_by_names = defaultdict(list)
+ages = []
+for p in persons:
+    name = p['Name']
+    age = p['Age']
+    age_by_names[age].append(name)
+    len_name_by_names[len(name)].append(name)
+    ages.append(age)
+min_age = min(age_by_names)
+print("самый младший:", *age_by_names[min_age])
+max_len_name = max(len_name_by_names)
+print("Самое длинное имя:", *len_name_by_names[max_len_name])
+print("средний возраст:", sum(ages) // len(ages))
