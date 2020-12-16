@@ -27,25 +27,54 @@
 #     print(message)
 # my_print("I'm the string")
 #######################################
-# Задание №4a
-from collections import defaultdict
+# Задание №4
 
-persons = [{"Name": "John", "Age": 15},
-           {"Name": "Mark", "Age": 18},
-           {"Name": "Michael", "Age": 27},
-           {"Name": "Jack", "Age": 35},
-           {"Name": "Donald", "Age": 38}]
-age_by_names = defaultdict(list)
-len_name_by_names = defaultdict(list)
-ages = []
-for p in persons:
-    name = p['Name']
-    age = p['Age']
-    age_by_names[age].append(name)
-    len_name_by_names[len(name)].append(name)
-    ages.append(age)
-min_age = min(age_by_names)
-print("самый младший:", *age_by_names[min_age])
-max_len_name = max(len_name_by_names)
-print("Самое длинное имя:", *len_name_by_names[max_len_name])
-print("средний возраст:", sum(ages) // len(ages))
+# list_age = []
+# list_name = []
+# persons = [{"Name": "John", "Age": 29},
+#            {"Name": "Mark", "Age": 26},
+#            {"Name": "Michael", "Age": 35},
+#            {"Name": "Jack", "Age": 39},
+#            {"Name": "Donald", "Age": 48}]
+#
+# for dictionary in persons:
+#     list_age.append(dictionary['Age'])
+# min_age = min(list_age)
+# for separated_dictionary in persons:
+#     if separated_dictionary['Age'] == min_age:
+#         print("Самый молодой:",separated_dictionary['Name'])
+# max_len_name = 0
+# for dictionary in persons:
+#     if len(dictionary["Name"]) >= max_len_name:
+#         max_len_name = len(dictionary["Name"])
+# for separated_dictionary in persons:
+#     if len(separated_dictionary["Name"]) ==max_len_name:
+#         print("Самое длинное имя:", separated_dictionary["Name"])
+# print("Средний возраст:", sum(list_age)//len(list_age))
+
+# # Задание №5
+double_keys_list = []
+first_keys_list = []
+my_dict1 = {"name": "William",
+            "age": 25,
+            "profession": "engineer",
+            "city": "Liverpool",
+            "status": "single",
+            "education": "higher education",
+            "driver license": "B1"
+            }
+my_dict2 = {"name": "Garry",
+            "age": 30,
+            "profession": "lawyer",
+            "country": "USA",
+            "height": "185cm",
+            "weight": "80kg",
+            "driver license": "B2"
+            }
+# for keys in my_dict1:
+#     print(keys)
+set_for_my_dict1 = set(my_dict1)
+set_for_my_dict2 = set(my_dict2)
+inter_set = set_for_my_dict1.intersection(set_for_my_dict2)
+double_keys_list.append(inter_set)
+print(double_keys_list)
