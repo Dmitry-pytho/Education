@@ -27,6 +27,7 @@
 #     print(message)
 # my_print("I'm the string")
 #######################################
+
 # Задание №4
 
 # list_age = []
