@@ -1,45 +1,44 @@
-from random import randint, choice
+from random import randint, choice, shuffle
 import string
 
-# №Задание №1
-with open("D:\Дима\Python\Education\domains.txt", "r") as txt:
+with open("domains.txt", "r") as txt:
     spisok_domenov = []
     for line in txt.readlines():
         spisok_domenov.append(line.replace("\n", "").replace(".", ""))
-print(spisok_domenov)
-#######################################################
-
-
-# №Задание №2
-with open("D:\Дима\Python\Education\_names.txt", "r") as txt:
-    spisok_names = []
-    for line in txt.readlines():
-        spisok_names.append(line.split()[1])
-    print(spisok_names)
-
-############################################################
-
-#Задание №3
-
-with open("D:\Дима\Python\Education\domains.txt", "r") as txt:
-    spisok_domenov = []
-    for line in txt.readlines():
-        spisok_domenov.append(line.replace("\n", ""))
         random_domen = choice(spisok_domenov)
 
-with open("D:\Дима\Python\Education\_names.txt", "r") as text:
+with open("_names.txt", "r") as text:
     spisok_names = []
     for line in text.readlines():
         spisok_names.append(line.split()[1])
         random_name = choice(spisok_names)
 
-for numbers in range(1):
-    random_number_for_mail = str(randint(100, 1000))
 
-letter_for_mail = choice(string.ascii_letters.lower())
-random_letter_for_mail = ""
-for x in range(randint(5,7)):
-    random_letter_for_mail = random_letter_for_mail + choice(string.ascii_letters.lower())
+def generate_random_numbers():
+    number = str(randint(100, 1000))
+    return number
 
-email = random_name + "." + random_number_for_mail + "@" + random_letter_for_mail + random_domen
-print("e-mail:", email)
+
+random_number = generate_random_numbers()
+
+
+def generate_random_letters():
+    alphabet = list(string.ascii_lowercase)
+    shuffle(alphabet)
+    random_letters = ""
+    for x in range(randint(5, 7)):
+        letter = choice(alphabet)
+        random_letters = random_letters + letter
+    return random_letters
+
+
+rand_letters = generate_random_letters()
+
+
+def generate_email(domains, names):
+    result = names + generate_random_numbers() + "@" + generate_random_letters() + "." + domains
+    return result
+
+
+email = generate_email(random_domen, random_name)
+print(email)
