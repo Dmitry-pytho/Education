@@ -1,3 +1,6 @@
+from random import randint, choice
+import string
+
 # №Задание №1
 with open("D:\Дима\Python\Education\domains.txt", "r") as txt:
     spisok_domenov = []
@@ -17,8 +20,6 @@ with open("D:\Дима\Python\Education\_names.txt", "r") as txt:
 ############################################################
 
 #Задание №3
-from random import randint, choice
-import string
 
 with open("D:\Дима\Python\Education\domains.txt", "r") as txt:
     spisok_domenov = []
