@@ -7,6 +7,7 @@ with open("domains.txt", "r") as txt:
         spisok_domenov.append(line.replace("\n", "").replace(".", ""))
         random_domen = choice(spisok_domenov)
 
+
 with open("_names.txt", "r") as text:
     spisok_names = []
     for line in text.readlines():
