@@ -4,7 +4,7 @@ from re import split
 
 
 def generate_random_letters():
-    symbols = list(string.ascii_letters) + list(string.digits) + list("\n")
+    symbols = list(string.ascii_letters) + list(string.digits) + list("\n") + list(string.punctuation)
     shuffle(symbols)
     random_letters = ""
     str_str2 = ""
@@ -100,4 +100,4 @@ def generate_and_write_file(filename):
     return result
 
 
-generate_and_write_file("d:\Дима\Python\Education\win.json")
+generate_and_write_file("d:\Дима\Python\Education\win.csv")
