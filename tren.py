@@ -1,26 +1,29 @@
-from random import randint, shuffle, choice
-import string
-from re import split
+from random import randint, choice, shuffle, random
+import string, csv, json
 
 
+def generate_rows_and_columns():
+    n = randint(3, 10)
+
+    m = randint(3, 10)
+
+    rows = []
+    for x in range(n):
+        columns = []
+        for y in range(m):
+            null_or_one = choice([0, 1])
+            columns.append(null_or_one)
+        rows.append(columns)
+    return rows
 
 
-def generate_random_letters():
-    symbols = list(string.ascii_letters) + list(string.digits) + list(string.whitespace)
-    shuffle(symbols)
-    random_letters = ""
-    str_str2 = ""
-    for word in range(randint(50, 300)):
-        letter = choice(symbols)
-        random_letters = (random_letters + letter).title()
-        str_str1 = split(r'(\d+)', random_letters)
-        str_str2 = ",".join(str_str1)
-    return str_str2
+def write_csv_file():
+    with open("csv_file_for_lesson9.csv", "w") as csv_file:
+        writer = csv.writer(csv_file)
+        content = generate_rows_and_columns()
+        print(content)
+        writer.writerows(content)
+        return writer
 
 
-print(generate_random_letters())
-
-
-def write_txt_file():
-    with open ("txt_for_lesson9.txt", "w") as text_file:
-        text_file.write(generate_random_letters())
+write_csv_file()
