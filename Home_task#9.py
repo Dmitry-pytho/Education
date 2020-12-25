@@ -3,6 +3,9 @@ import string, json, csv
 from re import split
 
 
+# Функция №1
+
+
 def generate_random_letters():
     symbols = list(string.ascii_letters) + list(string.digits) + list("\n") + list(string.punctuation)
     shuffle(symbols)
@@ -22,6 +25,9 @@ def write_txt_file(filename):
         data.append(generate_random_letters())
         txt.writelines(data)
     return txt
+
+
+# Функция №2
 
 
 def generate_random_key_for_dictionary():
@@ -64,6 +70,9 @@ def write_json_file(filename):
     return json_file
 
 
+# Функция №3
+
+
 def generate_rows_and_columns():
     n = randint(3, 10)
 
@@ -84,6 +93,9 @@ def write_csv_file(filename):
         writer = csv.writer(csv_file)
         writer.writerows(generate_rows_and_columns())
         return writer
+
+
+#Основное задание
 
 
 def generate_and_write_file(filename):
