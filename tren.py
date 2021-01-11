@@ -1,29 +1,35 @@
-from random import randint, choice, shuffle, random
-import string, csv, json
+import os
+
+from os.path import join as path_join
+from os.path import isfile
+from string import ascii_lowercase as alphabet
 
 
-def generate_rows_and_columns():
-    n = randint(3, 10)
+def tanos_click(dirname):
+    files = ([file for file in os.listdir(dirname) if isfile(path_join(dirname, file))])
+    for file in list(set(files))[:len(files)//2]:
+        os.remove(path_join(dirname, file))
 
-    m = randint(3, 10)
-
-    rows = []
-    for x in range(n):
-        columns = []
-        for y in range(m):
-            null_or_one = choice([0, 1])
-            columns.append(null_or_one)
-        rows.append(columns)
-    return rows
+def create_txt_files(dirname):
+    for letter in alphabet:
+        file_name = os.path.join(dirname, f"{letter}.txt")
+        new_alphabet = alphabet.replace(letter, letter.upper())
+        write_txt_file(file_name, new_alphabet)
 
 
-def write_csv_file():
-    with open("csv_file_for_lesson9.csv", "w") as csv_file:
-        writer = csv.writer(csv_file)
-        content = generate_rows_and_columns()
-        print(content)
-        writer.writerows(content)
-        return writer
+def write_txt_file(filename, data):
+    with open(filename, "w") as txt_file:
+        txt_file.write(data)
 
 
-write_csv_file()
+def create_dir(dir_name):
+    try:
+        os.mkdir(dir_name)
+    except FileExistsError:
+        pass
+
+
+dir_name = "alphabet"
+create_dir(dir_name)
+create_txt_files(dir_name)
+tanos_click(dir_name)
