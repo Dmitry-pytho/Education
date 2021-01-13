@@ -1,5 +1,4 @@
 import json
-import re
 
 
 def read_json_file(filename):
