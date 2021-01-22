@@ -11,21 +11,23 @@ class EmailGeneratror:
         self.domains = self.get_domain()
         self.names = self.get_name()
 
+
+
     def get_domain(self):
         with open(self.domains_txt, "r") as txt:
             spisok_domenov = []
             for line in txt.readlines():
                 spisok_domenov.append(line.replace("\n", "").replace(".", ""))
-            random_domen = choice(spisok_domenov)
-            return random_domen
+            return spisok_domenov
+
+
 
     def get_name(self):
         with open(self.name_txt, "r") as text:
             spisok_names = []
             for line in text.readlines():
                 spisok_names.append(line.split()[1])
-            random_name = choice(spisok_names)
-            return random_name
+            return spisok_names
 
     def generate_random_numbers(self):
         self.number = str(randint(100, 1000))
@@ -41,13 +43,19 @@ class EmailGeneratror:
         return random_letters
 
     def generate_email(self):
-        result = self.get_name() + self.generate_random_numbers() + "@" + self.generate_random_letters() + "." + self.get_domain()
+        result = choice(
+            self.get_name()) + self.generate_random_numbers() + "@" + self.generate_random_letters() + "." + choice(
+            self.get_domain())
         return result
+
+    def __repr__(self):
+        my_str = ("len domains = " +  str(len(self.domains))) +"," + ("len names = " +  str(len(self.names)))
+        return my_str
 
 
 email_generator = EmailGeneratror("d:\Дима\Python\Education\_names.txt", "d:\Дима\Python\Education\domains.txt")
 
-print(len(email_generator.names), len(email_generator.domains))
 
 email = email_generator.generate_email()
 print(email)
+print(email_generator)
