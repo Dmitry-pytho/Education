@@ -1,11 +1,35 @@
-alien_0 = {"x_position": 0, "y_position": 25, "speed": "fast"}
+aliens = []
 
-if alien_0["speed"] == "slow":
-    x_increment = 1
-elif alien_0["speed"] == "medium":
-    x_increment = 2
-else:
-    x_increment = 3
+for alien_number in range(0, 30):
+    new_alien = {"color": "green",
+                 "points": 5,
+                 "speed": "slow"
+                 }
+    aliens.append(new_alien)
 
-alien_0["x_position"] = alien_0["x_position"] + x_increment
-print("New x-position: " + str(alien_0["x_position"]))
+for alien in aliens[0:3]:
+    if alien["color"] == "green":
+        alien["color"] = "yellow"
+        alien["points"] = 10
+        alien["speed"] = "medium"
+    # elif alien['color'] == 'yellow':
+    #     alien['color'] = 'red'
+    #     alien['speed'] = 'fast'
+    #     alien['points'] = 15
+
+
+for alien in aliens[0:5]:
+    print(alien)
+
+for alien in aliens[0:3]:
+    # if alien["color"] == "green":
+    #     alien["color"] = "yellow"
+    #     alien["points"] = 10
+    #     alien["speed"] = "medium"
+    if alien['color'] == 'yellow':
+        alien['color'] = 'red'
+        alien['speed'] = 'fast'
+        alien['points'] = 15
+
+for alien in aliens[0:5]:
+    print(alien)
